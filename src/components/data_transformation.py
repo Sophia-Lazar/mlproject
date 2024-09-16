@@ -21,7 +21,7 @@ class DataTransformation:
     def __init__(self):
         self.data_tranformation_config=DataTransformationConfig()
 
-    def data_tranformation_objet(self):
+    def get_data_tranformer_objet(self):
         ''' 
         This function is responsible for data transformation
         '''
@@ -66,5 +66,9 @@ class DataTransformation:
             test_df = pd.read_csv(test_path)
 
             logging.info("read train and test data")
+
+            logging.info("Obtaining preprocessing object")
+
+            preprocessing_obj = self.get_data_tranformer_objet
         except:
             pass
